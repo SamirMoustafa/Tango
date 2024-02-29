@@ -5,6 +5,7 @@ RUN apt-get update \
     && apt-get install -y build-essential python3-dev make cmake git \
     && git clone https://github.com/dmlc/dgl.git \
     && cd dgl \
+    && git submodule update --init --recursive \
     && mkdir build \
     && cd build \
     && cmake -DUSE_CUDA=ON .. \
